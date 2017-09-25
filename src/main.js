@@ -5,6 +5,17 @@ import App from './App'
 import router from './router'
 import store from './store/store'
 
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
+
+Vue.axios.defaults.baseURL = 'http://localhost:4000/';
+
+Vue.filter('to-lowercase', function(value) {
+  return value.toLowerCase();
+});
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
