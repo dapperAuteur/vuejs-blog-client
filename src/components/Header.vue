@@ -66,10 +66,10 @@
       // }
     },
     methods: {
-      ...mapActions({
-          randomWord: 'randomWord',
-          fetchData: 'loadData',
-      }),
+      // ...mapActions({
+      //     randomWord: 'randomWord',
+      //     fetchData: 'loadData',
+      // }),
       isLoggedIn() {
         return this.authenticated = !this.authenticated;
       },

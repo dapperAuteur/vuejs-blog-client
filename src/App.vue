@@ -14,9 +14,8 @@
       appHeader: Header
     },
     created() {
-      // this.$store.dispatch('initWords');
-      // this.$store.dispatch('randomWord');
-      // this.$store.dispatch('setGameStatus');
+      this.$store.dispatch('initAuthors');
+      this.$store.dispatch('initPosts');
     }
   }
 </script>

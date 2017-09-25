@@ -1,22 +1,36 @@
 <template>
   <div class="blog">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>{{ post }}</li>
+    <ul class="list-group">
+      <app-post
+        v-for="post in posts"
+        :key="post.id"
+        :post="post">
+      </app-post>
     </ul>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'blog',
-  data () {
-    return {
-      msg: 'Welcome to the Vue.js Blog Component'
+  import Post from './Post.vue';
+  export default {
+    name: 'blog',
+    data () {
+      return {
+        msg: 'Welcome to the Vue.js Blog Component',
+      }
+    },
+    components: {
+      appPost: Post
+    },
+    computed: {
+      posts() {
+        // console.log(this.$store.getters.posts);
+        console.log(this.$store.getters.posts);
+        return this.$store.getters.posts
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

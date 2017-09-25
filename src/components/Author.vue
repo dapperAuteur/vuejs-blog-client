@@ -1,21 +1,26 @@
 <template>
   <div class="author">
-    <h1>{{ msg }}</h1>
-    <h2>Authors</h2>
-    <ul>
-      <li>{{ authors }}</li>
-    </ul>
+    <h3>author: {{ author.username }}</h3>
+    <h3>email: {{ author.email }}</h3>
+    <h3>author: {{ author.image }}</h3>
   </div>
 </template>
 
 <script>
 export default {
   name: 'author',
+  props: ['author'],
   data () {
     return {
-      msg: 'Welcome to Authors Component'
+      msg: 'Welcome to Author Component',
     }
-  }
+  },
+  // computed: {
+  //   authorDetails() {
+  //     console.log(this.$store.state.authors.authors);
+  //     return this.$store.state.authors.authors;
+  //   }
+  // }
 }
 </script>
 
