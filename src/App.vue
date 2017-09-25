@@ -14,6 +14,7 @@
       appHeader: Header
     },
     created() {
+      this.$store.dispatch('loadData');
       this.$store.dispatch('initAuthors');
       this.$store.dispatch('initPosts');
     }
